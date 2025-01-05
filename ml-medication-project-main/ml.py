@@ -159,10 +159,10 @@ st.markdown("<h1 style='text-align: center; color: green;'>Health Care Center ðŸ
 
 # Load datasets and model
 # Load datasets and model
-sym_des = pd.read_csv("symptoms_df.csv")
+sym_des = pd.read_csv("symtoms_df.csv")
 precautions = pd.read_csv("precautions_df.csv")
 workout = pd.read_csv("workout_df.csv")
-description = pd.read_csv("]description.csv")
+description = pd.read_csv("description.csv")
 medications = pd.read_csv("medications.csv")
 diets = pd.read_csv("diets.csv")
 svc = pickle.load(open('svc.pkl', 'rb'))
