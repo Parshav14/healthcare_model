@@ -154,10 +154,10 @@ import pickle
 
 # Set up page configuration
 st.set_page_config(
-    page_title="Glamorous Health App",
-    page_icon="✨",
+    page_title="Health App",
+    page_icon="🩺",
     layout="wide",
-    initial_sidebar_state="expanded",
+    initial_sidebar_state="collapsed",;
 )
 
 # Inject custom CSS for glamorous effects
