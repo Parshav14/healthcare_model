@@ -152,9 +152,100 @@ import numpy as np
 import pandas as pd
 import pickle
 
-# Page configuration
-st.set_page_config(page_title="Health Care Center", page_icon="🩺", layout="centered")
-st.markdown("<h1 style='text-align: center; color: green;'>Health Care Center 🩺</h1>", unsafe_allow_html=True)
+# Set up page configuration
+st.set_page_config(
+    page_title="Glamorous Health App",
+    page_icon="✨",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
+
+# Inject custom CSS for glamorous effects
+st.markdown(
+    """
+    <style>
+    body {
+        background: linear-gradient(to right, #1f4037, #99f2c8);
+        color: white;
+        font-family: 'Arial', sans-serif;
+    }
+    h1 {
+        font-size: 4rem;
+        text-align: center;
+        text-shadow: 2px 2px 10px #000;
+        color: #f0e68c;
+        animation: glow 2s ease-in-out infinite alternate;
+    }
+    
+    @keyframes glow {
+        from {
+            text-shadow: 0 0 10px #f0e68c, 0 0 20px #f0e68c, 0 0 30px #f0e68c;
+        }
+        to {
+            text-shadow: 0 0 20px #ff4500, 0 0 30px #ff4500, 0 0 40px #ff4500;
+        }
+    }
+    
+    .stButton>button {
+        background: #f0e68c;
+        border: none;
+        color: black;
+        font-size: 1.5rem;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .stButton>button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px #ff4500;
+    }
+    
+    .sidebar {
+        background: #2c3e50;
+        padding: 10px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+# Main App Title
+st.title("✨Health Care Model✨")
+
+# Sidebar Menu
+st.sidebar.title("Navigation")
+menu = st.sidebar.radio("Go to:", ("Home", "About", "Predict"))
+
+if menu == "Home":
+    st.subheader("Welcome to the Glamorous Health Care App!")
+    st.write(
+        """This application helps you predict health conditions using advanced Machine Learning models.
+        Choose **Predict** from the menu to get started. 💖""")
+
+elif menu == "About":
+    st.subheader("About the App")
+    st.write(
+        """This glamorous health care application is designed to assist in preliminary diagnosis of various health conditions."
+        "Our goal is to integrate technology and health care to make predictions more accessible and glamorous.✨""")
+
+elif menu == "Predict":
+    st.subheader("Health Prediction Tool")
+
+    # User Input
+    age = st.number_input("Enter your age", min_value=1, max_value=120, value=25)
+    bmi = st.number_input("Enter your BMI", min_value=10.0, max_value=50.0, value=22.5)
+    bp = st.number_input("Enter your blood pressure (mmHg)", min_value=80, max_value=200, value=120)
+
+    # Prediction Button
+    if st.button("Predict Now 💡"):
+        prediction = np.random.choice(["Healthy", "At Risk", "Needs Attention"])
+        st.success(f"Your health status: {prediction}")
+
+# Footer
+st.markdown("""
+    <hr>
+    <p style='text-align: center;'>Developed with 💖 by [Your Name]</p>
+""")
 
 
 # Load datasets and model
