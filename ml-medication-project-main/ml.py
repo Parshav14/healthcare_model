@@ -241,11 +241,6 @@ elif menu == "Predict":
         prediction = np.random.choice(["Healthy", "At Risk", "Needs Attention"])
         st.success(f"Your health status: {prediction}")
 
-# Footer
-st.markdown("""
-    <hr>
-    <p style='text-align: center;'>Developed with 💖 by [Your Name]</p>
-""")
 
 
 # Load datasets and model
