@@ -159,16 +159,13 @@ st.markdown("<h1 style='text-align: center; color: green;'>Health Care Center ðŸ
 
 # Load datasets and model
 # Load datasets and model
-try:
-    sym_des = pd.read_csv("datasets/symptoms_df.csv")
-    precautions = pd.read_csv("datasets/precautions_df.csv")
-    workout = pd.read_csv("datasets/workout_df.csv")
-    description = pd.read_csv("datasets/description.csv")
-    medications = pd.read_csv("datasets/medications.csv")
-    diets = pd.read_csv("datasets/diets.csv")
-    svc = pickle.load(open('models/svc.pkl', 'rb'))
-except Exception as e:
-    st.error(f"Error loading files: {e}")
+sym_des = pd.read_csv("symptoms_df.csv")
+precautions = pd.read_csv("precautions_df.csv")
+workout = pd.read_csv("workout_df.csv")
+description = pd.read_csv("]description.csv")
+medications = pd.read_csv("medications.csv")
+diets = pd.read_csv("diets.csv")
+svc = pickle.load(open('svc.pkl', 'rb'))
 
 
 # List of symptoms for auto-suggestion
